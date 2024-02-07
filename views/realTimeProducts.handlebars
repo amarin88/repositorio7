@@ -3,9 +3,12 @@
     <h3>{{title}}</h3>
     <p>{{description}}</p>
     <p>Precio: ${{price}}</p>
+    <p>Thumbnail: {{thumbnail}}</p>
+    <p>Stock: {{stock}}</p>
+    <p>Código: {{code}}</p>
+    
   </div>
 {{/each}}
-
 
 <form id="productForm">
   <label for="productTitle">Título:</label>
@@ -15,10 +18,17 @@
   <input type="text" id="productDescription" required>
 
   <label for="productPrice">Precio:</label>
-  <input type="number" id="productPrice" required>
+  <input type="number" min="1" max="10" id="productPrice" required>
+
+  <label for="productThumbnail">Thumbnail:</label>
+  <input type="text" id="productThumbnail" required>
+
+  <label for="productStock">Stock:</label>
+  <input type="number" min="1" max="500" id="productStock" required>
+
+  <label for="productCode">Código:</label>
+  <input type="text" id="productCode" required>
+
 
   <button type="submit">Agregar Producto</button>
 </form>
-
-<script src="/socket.io/socket.io.js"></script>
-<script src="../../public/js/index.js"></script>
